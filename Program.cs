@@ -10,7 +10,7 @@ namespace assign2
     {
         static void Main(string[] args)
         {
-            int[] arr = { 1, 2, 3, 2, 3, 4, 5, 5, 1,1 ,10,3,4};
+            int[] arr = { 1, 2, 3, 2, 3, 4, 5, 5, 1,1 ,10,3,4,0,0};
             int[,] result = new int[arr.Length,2];
             int ind = 0;
             bool doing = true;
@@ -41,7 +41,7 @@ namespace assign2
 
             for(int x = 0; x < result.GetLength(0); ++x)
             {
-                if (result[x, 0] != 0 && result[x, 1] != 0)
+                if (result[x, 1] != 0)
                 {
                     Console.Write("number {0} Occurs {1}", result[x, 0], result[x, 1]);
                     Console.WriteLine();
