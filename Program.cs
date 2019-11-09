@@ -41,7 +41,7 @@ namespace assign2
 
             for(int x = 0; x < result.GetLength(0); ++x)
             {
-                if (result[x, 0] != 0 && result[x, 1] == 0)
+                if (result[x, 0] != 0 && result[x, 1] != 0)
                 {
                     Console.Write("number {0} Occurs {1}", result[x, 0], result[x, 1]);
                     Console.WriteLine();
