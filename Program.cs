@@ -6,27 +6,26 @@ using System.Threading.Tasks;
 
 namespace assign2
 {
-    class Program
+
+    struct Frequency
     {
-        static void Main(string[] args)
+        public void frequencyOfElement(int[] arr)
         {
-            int[] arr = { 1, 2, 3, 2, 3, 4, 5, 5, 1,1 ,10,3,4,0,0};
-            int[,] result = new int[arr.Length,2];
+            int[,] result = new int[arr.Length, 2];
             int ind = 0;
             bool doing = true;
 
-            for(int i = 0; i < arr.Length; ++i)
+            for (int i = 0; i < arr.Length; ++i)
             {
                 doing = false;
-                for(int j=0;j < result.GetLength(0); ++j)
+                for (int j = 0; j < result.GetLength(0); ++j)
                 {
                     if (result[j, 0] == arr[i])
                     {
-                        result[j,1]++;
+                        result[j, 1]++;
                         doing = true;
                         break;
                     }
-                 
                 }
 
                 if (doing == false)
@@ -35,11 +34,9 @@ namespace assign2
                     result[ind, 1] = 1;
                     ind++;
                 }
-
-
             }
 
-            for(int x = 0; x < result.GetLength(0); ++x)
+            for (int x = 0; x < result.GetLength(0); ++x)
             {
                 if (result[x, 1] != 0)
                 {
@@ -48,6 +45,16 @@ namespace assign2
                 }
             }
             Console.ReadKey();
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arr = { 1, 2, 3, 2, 3, 4, 5, 5, 1,1 ,10,3,4,0,0};
+            Frequency frequency;
+            frequency.frequencyOfElement(arr);
+           
         }
     }
 }
